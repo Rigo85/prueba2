@@ -1,0 +1,4 @@
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BEL_BookApp\bin\Debug\BEL_BookApp.dll
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BEL_BookApp\bin\Debug\BEL_BookApp.pdb
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BEL_BookApp\obj\Debug\BEL_BookApp.dll
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BEL_BookApp\obj\Debug\BEL_BookApp.pdb

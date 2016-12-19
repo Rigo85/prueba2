@@ -1,0 +1,4 @@
+D:\3TierBookApp\BEL_BookApp\bin\Debug\BEL_BookApp.dll
+D:\3TierBookApp\BEL_BookApp\bin\Debug\BEL_BookApp.pdb
+D:\3TierBookApp\BEL_BookApp\obj\Debug\BEL_BookApp.dll
+D:\3TierBookApp\BEL_BookApp\obj\Debug\BEL_BookApp.pdb

@@ -1,0 +1,9 @@
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BLL_BookApp\obj\Debug\BLL_BookApp.csprojResolveAssemblyReference.cache
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BLL_BookApp\bin\Debug\BLL_BookApp.dll
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BLL_BookApp\bin\Debug\BLL_BookApp.pdb
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BLL_BookApp\bin\Debug\BEL_BookApp.dll
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BLL_BookApp\bin\Debug\DAL_BookApp.dll
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BLL_BookApp\bin\Debug\BEL_BookApp.pdb
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BLL_BookApp\bin\Debug\DAL_BookApp.pdb
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BLL_BookApp\obj\Debug\BLL_BookApp.dll
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\BLL_BookApp\obj\Debug\BLL_BookApp.pdb

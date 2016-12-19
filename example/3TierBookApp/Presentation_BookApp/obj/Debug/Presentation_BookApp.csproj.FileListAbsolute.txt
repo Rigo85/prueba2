@@ -1,0 +1,11 @@
+D:\3TierBookApp\Presentation_BookApp\bin\Presentation_BookApp.dll
+D:\3TierBookApp\Presentation_BookApp\bin\Presentation_BookApp.pdb
+D:\3TierBookApp\Presentation_BookApp\bin\BEL_BookApp.dll
+D:\3TierBookApp\Presentation_BookApp\bin\BLL_BookApp.dll
+D:\3TierBookApp\Presentation_BookApp\bin\DAL_BookApp.dll
+D:\3TierBookApp\Presentation_BookApp\bin\BEL_BookApp.pdb
+D:\3TierBookApp\Presentation_BookApp\bin\BLL_BookApp.pdb
+D:\3TierBookApp\Presentation_BookApp\bin\DAL_BookApp.pdb
+D:\3TierBookApp\Presentation_BookApp\obj\Debug\Presentation_BookApp.csprojResolveAssemblyReference.cache
+D:\3TierBookApp\Presentation_BookApp\obj\Debug\Presentation_BookApp.dll
+D:\3TierBookApp\Presentation_BookApp\obj\Debug\Presentation_BookApp.pdb

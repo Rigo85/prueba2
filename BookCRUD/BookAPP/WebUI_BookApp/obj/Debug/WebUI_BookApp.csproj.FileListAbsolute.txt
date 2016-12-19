@@ -1,0 +1,12 @@
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\WebUI_BookApp\obj\Debug\WebUI_BookApp.csprojResolveAssemblyReference.cache
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\WebUI_BookApp\bin\WebUI_BookApp.dll.config
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\WebUI_BookApp\bin\WebUI_BookApp.dll
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\WebUI_BookApp\bin\WebUI_BookApp.pdb
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\WebUI_BookApp\bin\BEL_BookApp.dll
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\WebUI_BookApp\bin\BLL_BookApp.dll
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\WebUI_BookApp\bin\BEL_BookApp.pdb
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\WebUI_BookApp\bin\BLL_BookApp.pdb
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\WebUI_BookApp\obj\Debug\WebUI_BookApp.dll
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\WebUI_BookApp\obj\Debug\WebUI_BookApp.pdb
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\WebUI_BookApp\bin\DAL_BookApp.dll
+C:\Users\USUARIO\Desktop\Ejemplo2\BookCRUD\BookAPP\WebUI_BookApp\bin\DAL_BookApp.pdb

@@ -1,0 +1,9 @@
+D:\3TierBookApp\BLL_BookApp\bin\Debug\BLL_BookApp.dll
+D:\3TierBookApp\BLL_BookApp\bin\Debug\BLL_BookApp.pdb
+D:\3TierBookApp\BLL_BookApp\bin\Debug\BEL_BookApp.dll
+D:\3TierBookApp\BLL_BookApp\bin\Debug\DAL_BookApp.dll
+D:\3TierBookApp\BLL_BookApp\bin\Debug\BEL_BookApp.pdb
+D:\3TierBookApp\BLL_BookApp\bin\Debug\DAL_BookApp.pdb
+D:\3TierBookApp\BLL_BookApp\obj\Debug\BLL_BookApp.csprojResolveAssemblyReference.cache
+D:\3TierBookApp\BLL_BookApp\obj\Debug\BLL_BookApp.dll
+D:\3TierBookApp\BLL_BookApp\obj\Debug\BLL_BookApp.pdb
