@@ -9,14 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 
+
 namespace DAL_BookApp
 {
-    public class BooksDetails_DAL
+    public class Publisher_DAL
     {
         string conStr = ConfigurationManager.ConnectionStrings["conStr"].ConnectionString;
-        public Int32 SaveBookDetails(BooksDetails_BEL objBEL)
+
+        public Int32 SavePublishers(Publisher_BEL objBEL)
         {
-            int BookDetailsID = 0;
+            int PublisherID = 0;
 
             using (TransactionScope scope = new TransactionScope())
             {
@@ -26,14 +28,12 @@ namespace DAL_BookApp
                     {
                         conn.Open();
 
-                        using (SqlCommand cmd = new SqlCommand("InsertBookDetails_SP", conn))
+                        using (SqlCommand cmd = new SqlCommand("InsertPublishers_SP", conn))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("BookName", objBEL.BookName);
-                            cmd.Parameters.AddWithValue("Author", objBEL.Author);
-                            cmd.Parameters.AddWithValue("Price", objBEL.Price);
+                            cmd.Parameters.AddWithValue("PublisherName", objBEL.PublisherName);
 
-                            BookDetailsID = Convert.ToInt32(cmd.ExecuteScalar());
+                            PublisherID = Convert.ToInt32(cmd.ExecuteScalar());
                         }
                     }
                     catch (Exception ex)
@@ -44,12 +44,12 @@ namespace DAL_BookApp
                 scope.Complete();
             }
 
-            return BookDetailsID;
+            return PublisherID;
         }
 
-        public BooksDetails_BEL GetBookRecord(int id)
+        public Publisher_BEL GetPublisherRecord(int id)
         {
-            BooksDetails_BEL book = null;
+            Publisher_BEL publisher = null;
 
             using (TransactionScope scope = new TransactionScope())
             {
@@ -58,22 +58,19 @@ namespace DAL_BookApp
                     try
                     {
                         conn.Open();
-                        using (SqlCommand cmd = new SqlCommand("FetchBookRecord_Sp", conn))
+                        using (SqlCommand cmd = new SqlCommand("FetchPublisher_Sp", conn))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("BookId", id);
-
+                            cmd.Parameters.AddWithValue("PublisherId", id);
                             using (SqlDataReader reader = cmd.ExecuteReader())
                             {
                                 //todo probar linq
                                 while (reader.Read())
                                 {
-                                    book = new BooksDetails_BEL(
-                                                                reader["BookName"].ToString(),
-                                                                reader["Author"].ToString(),
-                                                                decimal.Parse(reader["Price"].ToString()));
-                                    book.BookId = Convert.ToInt32(reader["BookId"]);
-                                    book.Active = Convert.ToBoolean(reader["Active"]);
+                                    publisher = new Publisher_BEL(
+                                       reader["PublisherName"].ToString());
+                                    publisher.PublisherId = Convert.ToInt32(reader["PublisherId"]);
+                                    publisher.Active = Convert.ToBoolean(reader["Active"]);
                                 }
                             }
                         }
@@ -86,12 +83,12 @@ namespace DAL_BookApp
                 scope.Complete();
             }
 
-            return book;
+            return publisher;
         }
 
-        public IEnumerable<BooksDetails_BEL> GetBookRecords()
+        public IEnumerable<Publisher_BEL> GetPublisherRecords()
         {
-            List<BooksDetails_BEL> books = new List<BooksDetails_BEL>();
+            List<Publisher_BEL> publishers = new List<Publisher_BEL>();
 
             using (TransactionScope scope = new TransactionScope())
             {
@@ -100,7 +97,7 @@ namespace DAL_BookApp
                     try
                     {
                         conn.Open();
-                        using (SqlCommand cmd = new SqlCommand("FetchBookRecords_Sp", conn))
+                        using (SqlCommand cmd = new SqlCommand("FetchPublishers_Sp", conn))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
                             using (SqlDataReader reader = cmd.ExecuteReader())
@@ -108,14 +105,12 @@ namespace DAL_BookApp
                                 //todo probar linq
                                 while (reader.Read())
                                 {
-                                    BooksDetails_BEL book = new BooksDetails_BEL(
-                                        reader["BookName"].ToString(),
-                                        reader["Author"].ToString(),
-                                        decimal.Parse(reader["Price"].ToString()));
-                                    book.BookId = Convert.ToInt32(reader["BookId"]);
-                                    book.Active = Convert.ToBoolean(reader["Active"]);
+                                    Publisher_BEL publisher = new Publisher_BEL(
+                                        reader["PublisherName"].ToString());
+                                    publisher.PublisherId = Convert.ToInt32(reader["PublisherId"]);
+                                    publisher.Active = Convert.ToBoolean(reader["Active"]);
 
-                                    books.Add(book);
+                                    publishers.Add(publisher);
                                 }
                             }
                         }
@@ -128,10 +123,10 @@ namespace DAL_BookApp
                 scope.Complete();
             }
 
-            return books;
+            return publishers;
         }
 
-        public Int32 DeleteBookRecord(int id)
+        public Int32 DeletePublisherRecord(int id)
         {
             int result = 0;
 
@@ -143,10 +138,10 @@ namespace DAL_BookApp
                     {
                         conn.Open();
 
-                        using (SqlCommand cmd = new SqlCommand("DeleteBookRecords_Sp", conn))
+                        using (SqlCommand cmd = new SqlCommand("DeletePublishers_Sp", conn))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("BookId", id);
+                            cmd.Parameters.AddWithValue("PublisherId", id);
 
                             result = cmd.ExecuteNonQuery();
                         }
@@ -162,7 +157,7 @@ namespace DAL_BookApp
             return result > 0 ? result : 0;
         }
 
-        public Int32 UpdateBookRecord(BooksDetails_BEL objBEL)
+        public Int32 UpdatePublisherRecord(Publisher_BEL objBEL)
         {
             int result = 0;
 
@@ -173,13 +168,11 @@ namespace DAL_BookApp
                     try
                     {
                         conn.Open();
-                        using (SqlCommand cmd = new SqlCommand("UpdateBookRecord_SP", conn))
+                        using (SqlCommand cmd = new SqlCommand("UpdatePublishers_SP", conn))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("BookId", objBEL.BookId);
-                            cmd.Parameters.AddWithValue("BookName", objBEL.BookName);
-                            cmd.Parameters.AddWithValue("Author", objBEL.Author);
-                            cmd.Parameters.AddWithValue("Price", objBEL.Price);
+                            cmd.Parameters.AddWithValue("PublisherId", objBEL.PublisherId);
+                            cmd.Parameters.AddWithValue("PublisherName", objBEL.PublisherName);
 
                             result = cmd.ExecuteNonQuery();
                         }

@@ -13,5 +13,7 @@ namespace WebApplication2.Models
             : base("DefaultConnection")
         {
         }
+
+        public System.Data.Entity.DbSet<BEL_BookApp.BooksDetails_BEL> BooksDetails_BEL { get; set; }
     }
 }

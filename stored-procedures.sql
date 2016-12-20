@@ -1,45 +1,51 @@
 ALTER PROC [dbo].[InsertBookDetails_SP]
 @BookName  VARCHAR(100),
 @Author    VARCHAR(100),
-@Publisher  VARCHAR(200),
-@Price      DECIMAL(18,2)
+@Price     DECIMAL(18,2)
 AS
 BEGIN
-INSERT INTO BookDetails
-(
-	BookName,Author,Publisher,Price
-)
-VALUES
-(
-	@BookName,@Author,@Publisher,@Price
-)
+	INSERT INTO BookDetails	(BookName,Author,Price)
+		VALUES (@BookName,@Author,@Price)
+
+	SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]
 END
 
 GO
 
 ALTER PROC [dbo].[UpdateBookRecord_SP]
-@BookId                            INT,
-@BookName                    VARCHAR(100),
-@Author                             VARCHAR(100),
-@Publisher                        VARCHAR(200),
-@Price                                 DECIMAL(18,2)
+@BookId    INT,
+@BookName  VARCHAR(100),
+@Author    VARCHAR(100),
+@Price     DECIMAL(18,2)
 AS
 BEGIN
-UPDATE BookDetails SET
-                BookName=@BookName,
-                Author=@Author,
-                Publisher=@Publisher,
-                Price=@Price
-WHERE BookId=@BookId
+	UPDATE BookDetails SET
+		BookName=@BookName,
+		Author=@Author,
+		Price=@Price
+	WHERE BookId=@BookId
 END
 
 GO
 
 ALTER PROC [dbo].[DeleteBookRecords_Sp]
-                @BookId            INT
+@BookId INT
 AS
 BEGIN
-                DELETE FROM BookDetails WHERE BookId=@BookId
+	UPDATE BookDetails SET
+		Active = 0
+	WHERE BookId=@BookId
+END
+
+GO
+
+ALTER PROC [dbo].[FetchBookRecord_Sp]
+@BookId INT
+AS
+BEGIN
+	SELECT * 
+		FROM BookDetails
+		WHERE BookId = @BookId AND Active = 1
 END
 
 GO
@@ -47,6 +53,67 @@ GO
 ALTER PROC [dbo].[FetchBookRecords_Sp]
 AS
 BEGIN
-                SELECT * FROM BookDetails
+	SELECT * 
+		FROM BookDetails
+		WHERE Active = 1
 END
 
+GO
+
+-- publisher
+
+ALTER PROC [dbo].[InsertPublishers_SP]
+@PublisherName  VARCHAR(100)
+AS
+BEGIN
+	INSERT INTO Publisher (PublisherName)
+		VALUES (@PublisherName)
+
+	SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]
+END
+
+GO
+
+ALTER PROC [dbo].[UpdatePublishers_SP]
+@PublisherId INT,
+@PublisherName  VARCHAR(100)
+AS
+BEGIN
+	UPDATE Publisher SET
+		PublisherName=@PublisherName
+	WHERE PublisherId=@PublisherId
+END
+
+GO
+
+ALTER PROC [dbo].[DeletePublishers_Sp]
+@PublisherId INT
+AS
+BEGIN
+	UPDATE Publisher SET
+		Active = 0
+	WHERE PublisherId=@PublisherId
+END
+
+GO
+
+ALTER PROC [dbo].[FetchPublishers_Sp]
+AS
+BEGIN
+	SELECT * 
+		FROM Publisher
+		WHERE Active = 1
+END
+
+GO
+
+ALTER PROC [dbo].[FetchPublisher_Sp]
+@PublisherId INT
+AS
+BEGIN
+	SELECT * 
+		FROM Publisher
+		WHERE PublisherId = @PublisherId AND Active = 1
+END
+
+GO

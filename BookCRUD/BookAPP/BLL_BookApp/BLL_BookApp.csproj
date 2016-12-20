@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="BooksDetails_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publisher_BLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BEL_BookApp\BEL_BookApp.csproj">

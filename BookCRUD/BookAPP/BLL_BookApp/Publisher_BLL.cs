@@ -2,21 +2,20 @@
 using DAL_BookApp;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BLL_BookApp
 {
-    public class BookDetails_BLL
+    public class Publisher_BLL
     {
-        public Int32 SaveBookDetails(BooksDetails_BEL objBel)
+        public Int32 SavePublisher(Publisher_BEL objBel)
         {
-            BooksDetails_DAL objDal = new BooksDetails_DAL();
+            Publisher_DAL objDal = new Publisher_DAL();
             try
             {
-                return objDal.SaveBookDetails(objBel);
+                return objDal.SavePublishers(objBel);
             }
             catch (Exception ex)
             {
@@ -28,12 +27,12 @@ namespace BLL_BookApp
             }
         }
 
-        public IEnumerable<BooksDetails_BEL> GetBookRecords()
+        public Publisher_BEL GetPublisherRecord(int id)
         {
-            BooksDetails_DAL objDal = new BooksDetails_DAL();
+            Publisher_DAL objDal = new Publisher_DAL();
             try
             {
-                return objDal.GetBookRecords();
+                return objDal.GetPublisherRecord(id);
             }
             catch (Exception ex)
             {
@@ -45,12 +44,12 @@ namespace BLL_BookApp
             }
         }
 
-        public BooksDetails_BEL GetBookRecord(int id)
+        public IEnumerable<Publisher_BEL> GetPublisherRecords()
         {
-            BooksDetails_DAL objDal = new BooksDetails_DAL();
+            Publisher_DAL objDal = new Publisher_DAL();
             try
             {
-                return objDal.GetBookRecord(id);
+                return objDal.GetPublisherRecords();
             }
             catch (Exception ex)
             {
@@ -62,12 +61,12 @@ namespace BLL_BookApp
             }
         }
 
-        public Int32 DeleteBookRecord(int id)
+        public Int32 DeletePublisherRecord(int id)
         {
-            BooksDetails_DAL objDal = new BooksDetails_DAL();
+            Publisher_DAL objDal = new Publisher_DAL();
             try
             {
-                return objDal.DeleteBookRecord(id);
+                return objDal.DeletePublisherRecord(id);
             }
             catch (Exception ex)
             {
@@ -79,12 +78,12 @@ namespace BLL_BookApp
             }
         }
 
-        public Int32 UpdateBookRecord(BooksDetails_BEL objBel)
+        public Int32 UpdatePublisherRecord(Publisher_BEL objBel)
         {
-            BooksDetails_DAL objDal = new BooksDetails_DAL();
+            Publisher_DAL objDal = new Publisher_DAL();
             try
             {
-                return objDal.UpdateBookRecord(objBel);
+                return objDal.UpdatePublisherRecord(objBel);
             }
             catch (Exception ex)
             {
