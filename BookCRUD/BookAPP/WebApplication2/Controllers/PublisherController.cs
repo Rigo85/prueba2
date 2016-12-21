@@ -1,16 +1,19 @@
 ﻿using BEL_BookApp;
 using BLL_BookApp;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication2.Models;
 
 namespace WebApplication2.Controllers
 {
     public class PublisherController : Controller
     {
         Publisher_BLL Publisher_BLL = new Publisher_BLL();
+        BookDetails_BLL BookDetails_BLL = new BookDetails_BLL();
         //
         // GET: /Publisher/
         public ActionResult Index()
@@ -60,6 +63,18 @@ namespace WebApplication2.Controllers
         public ActionResult Remove(Publisher_BEL Publisher)
         {
             int result = Publisher_BLL.DeletePublisherRecord(Publisher.PublisherId);
+
+            return View("Index", Publisher_BLL.GetPublisherRecords());
+        }
+
+        public ActionResult AddBook(int id)
+        {
+            return View(new PublisherBooksModel(Publisher_BLL.GetPublisherRecord(id), BookDetails_BLL.GetBookRecords()));
+        }
+
+        [HttpPost]
+        public ActionResult SavePublisherBooks(int PublisherId, List<int> books)
+        {
 
             return View("Index", Publisher_BLL.GetPublisherRecords());
         }

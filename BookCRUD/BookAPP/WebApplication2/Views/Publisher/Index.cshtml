@@ -31,7 +31,8 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PublisherId }) |
           <!--  @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |-->
-            @Html.ActionLink("Delete", "Delete", new {  id=item.PublisherId })
+            @Html.ActionLink("Delete", "Delete", new {  id=item.PublisherId }) |
+            @Html.ActionLink("Agregar Libros", "AddBook", new { id = item.PublisherId })
         </td>
     </tr>
 }
