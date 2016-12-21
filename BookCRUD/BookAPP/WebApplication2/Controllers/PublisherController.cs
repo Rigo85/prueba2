@@ -69,14 +69,23 @@ namespace WebApplication2.Controllers
 
         public ActionResult AddBook(int id)
         {
-            return View(new PublisherBooksModel(Publisher_BLL.GetPublisherRecord(id), BookDetails_BLL.GetBookRecords()));
+            return View(
+                new PublisherBooksModel
+                    (Publisher_BLL.GetPublisherRecord(id),
+                    BookDetails_BLL.GetBookRecords(),
+                    Publisher_BLL.GetPublisherBooks(id)));
         }
 
         [HttpPost]
-        public ActionResult SavePublisherBooks(int PublisherId, List<int> books)
+        public ActionResult SavePublisherBooks(PublisherBooksModel PublisherBooksModel)
         {
-
-            return View("Index", Publisher_BLL.GetPublisherRecords());
+            Publisher_BLL.SavePublisherBooks(PublisherBooksModel.Publisher, PublisherBooksModel.AllBooks);
+            //return View("Index", Publisher_BLL.GetPublisherRecords());
+            return View(
+                new PublisherBooksModel
+                    (Publisher_BLL.GetPublisherRecord(PublisherBooksModel.Publisher.PublisherId),
+                    BookDetails_BLL.GetBookRecords(),
+                    Publisher_BLL.GetPublisherBooks(PublisherBooksModel.Publisher.PublisherId)));
         }
     }
 }

@@ -117,3 +117,61 @@ BEGIN
 END
 
 GO
+
+ALTER PROC [dbo].[FetchPublisherBooks_Sp]
+@PublisherId INT
+AS
+BEGIN
+	SELECT BookDetails.*
+		FROM Publisher 
+			INNER JOIN BooksPublishers ON Publisher.PublisherId = BooksPublishers.PublisherId 
+			INNER JOIN BookDetails ON BooksPublishers.BookId = BookDetails.BookId
+		WHERE Publisher.PublisherId = @PublisherId and BookDetails.Active = 1
+END
+
+GO
+
+ALTER PROC [dbo].[FetchPublisherBooksIds_Sp]
+@PublisherId INT
+AS
+BEGIN
+	SELECT BookDetails.BookId
+		FROM Publisher 
+			INNER JOIN BooksPublishers ON Publisher.PublisherId = BooksPublishers.PublisherId 
+			INNER JOIN BookDetails ON BooksPublishers.BookId = BookDetails.BookId
+		WHERE Publisher.PublisherId = @PublisherId and BookDetails.Active = 1
+END
+
+GO
+
+ALTER PROC [dbo].[InsertPublisherBook_SP]
+@PublisherId INT,
+@BookId INT
+AS
+BEGIN
+	DECLARE @Exist INT
+
+	SET @Exist = (SELECT COUNT(*) FROM BooksPublishers
+		WHERE PublisherId=@PublisherId AND BookId=@BookId)
+
+	IF @Exist = 0
+	BEGIN
+		INSERT INTO BooksPublishers (PublisherId, BookId, PublicationDate)
+			VALUES (@PublisherId, @BookId, GETDATE())
+
+		SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]
+	END
+END
+
+GO
+
+ALTER PROC [dbo].[RemovePublisherBook_SP]
+@PublisherId INT,
+@BookId INT
+AS
+BEGIN
+	DELETE FROM BooksPublishers
+		WHERE PublisherId=@PublisherId and BookId=@BookId
+END
+
+GO

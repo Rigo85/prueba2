@@ -1,0 +1,104 @@
+﻿@model WebApplication2.Models.PublisherBooksModel
+
+@{
+    ViewBag.Title = "AddBook";
+}
+
+
+<h2>AddBook</h2>
+
+<p>
+    <b>Publisher: @Html.DisplayFor(model => model.Publisher.PublisherName)</b>
+</p>
+<table class="table" id="tb1">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                BookId
+            </th>
+            <th>
+                BookName
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Price
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AllBooks)
+        {
+            <tr>
+                <td>
+                    @Html.CheckBox(item.BookId.ToString(), Model.PublisherBooks.Any(Book => Book.BookId == item.BookId), new Dictionary<string, Object> { { "id", item.BookId } })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<input type="button" value="Add" id="Add" class="btn btn-default" />
+<br />
+<br />
+@Html.ActionLink("Back to List", "Index")>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#Add').click(function () {
+                var Books = [];
+                var PublisherId = @(Model.Publisher.PublisherId);
+
+                $('#tb1 > tbody  > tr td:first-child').each(function (index, element) {
+                    if (element.getElementsByTagName("input").item(0).checked)
+                        Books.push({ "BookId": parseInt(element.getElementsByTagName("input").item(0).getAttribute("id")) });
+                });
+
+                console.log(JSON.stringify({ "Publisher": { "PublisherId": PublisherId }, "AllBooks": Books, "PublisherBooks": [] }));
+
+                $.ajax({
+                    url: '/Publisher/SavePublisherBooks',
+                    type: 'post',
+                    dataType: 'json',
+                    contentType: "application/json;",
+                    data: JSON.stringify({ "Publisher": { "PublisherId": PublisherId }, "AllBooks": Books, "PublisherBooks": [] }),
+                    success: function (response) {
+                        console.log("ok");
+                        console.log(response);
+                    },
+                    beforeSend: function () {
+                        // launchpreloader();
+                    },
+                    complete: function () {
+                        //stopPreloader();
+                    },
+                    error: function (response) {
+                        console.log("error");
+                        console.log(response.responseText);
+                    }
+                });
+            });
+        });
+
+    </script>
+}

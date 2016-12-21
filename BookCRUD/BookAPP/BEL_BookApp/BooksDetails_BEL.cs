@@ -17,6 +17,15 @@ namespace BEL_BookApp
             this.Active = true;
         }
 
+        public BooksDetails_BEL(int BookId, string BookName, string Author, decimal Price, bool Active)
+        {
+            this.BookId = BookId;
+            this.BookName = BookName;
+            this.Author = Author;
+            this.Price = Price;
+            this.Active = Active;
+        }
+
         public int BookId { get; set; }
         public string BookName { get; set; }
         public string Author { get; set; }

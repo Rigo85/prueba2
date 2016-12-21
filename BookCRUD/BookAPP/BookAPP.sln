@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL_BookApp", "BLL_BookApp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI_BookApp", "WebApplication2\WebUI_BookApp.csproj", "{6D6052CF-B635-45EF-B0D2-21DE9D227E67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{C2A91079-AC2E-46F2-A106-07B530D07011}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6D6052CF-B635-45EF-B0D2-21DE9D227E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D6052CF-B635-45EF-B0D2-21DE9D227E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D6052CF-B635-45EF-B0D2-21DE9D227E67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2A91079-AC2E-46F2-A106-07B530D07011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2A91079-AC2E-46F2-A106-07B530D07011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2A91079-AC2E-46F2-A106-07B530D07011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2A91079-AC2E-46F2-A106-07B530D07011}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

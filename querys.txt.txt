@@ -1,0 +1,25 @@
+Users       UserAddresses     Addresses
+=======     =============     =========
+Id          Id                Id
+FirstName   UserId            City
+LastName    AddressId         State
+                              Zip
+							  
+ Users.Id -> UserAddresses.UserId
+ Addresses.Id -> UserAddresses.AddressId
+ 
+ 
+ All records in Users based on Addresses.Id
+SELECT        Users.*
+FROM            Addresses INNER JOIN
+                         UserAddresses ON Addresses.Id = UserAddresses.AddressId INNER JOIN
+                         Users ON UserAddresses.UserId = Users.Id
+WHERE        (Addresses.Id = @AddressId)
+
+
+All records in Addresses based on Users.Id
+SELECT        Addresses.*
+FROM            Addresses INNER JOIN
+                         UserAddresses ON Addresses.Id = UserAddresses.AddressId INNER JOIN
+                         Users ON UserAddresses.UserId = Users.Id
+WHERE        (Users.Id = @UserId)

@@ -61,6 +61,23 @@ namespace BLL_BookApp
             }
         }
 
+        public IEnumerable<BooksDetails_BEL> GetPublisherBooks(int id)
+        {
+            Publisher_DAL objDal = new Publisher_DAL();
+            try
+            {
+                return objDal.GetPublisherBooks(id);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                objDal = null;
+            }
+        }
+
         public Int32 DeletePublisherRecord(int id)
         {
             Publisher_DAL objDal = new Publisher_DAL();
@@ -84,6 +101,23 @@ namespace BLL_BookApp
             try
             {
                 return objDal.UpdatePublisherRecord(objBel);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                objDal = null;
+            }
+        }
+
+        public Int32 SavePublisherBooks(Publisher_BEL Publisher, IEnumerable<BooksDetails_BEL> Books)
+        {
+            Publisher_DAL objDal = new Publisher_DAL();
+            try
+            {
+                return objDal.SavePublisherBooks(Publisher, Books);
             }
             catch (Exception ex)
             {
