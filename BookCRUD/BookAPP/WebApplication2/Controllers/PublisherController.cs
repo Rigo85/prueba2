@@ -80,7 +80,6 @@ namespace WebApplication2.Controllers
         public ActionResult SavePublisherBooks(PublisherBooksModel PublisherBooksModel)
         {
             Publisher_BLL.SavePublisherBooks(PublisherBooksModel.Publisher, PublisherBooksModel.AllBooks);
-            //return View("Index", Publisher_BLL.GetPublisherRecords());
             return View(
                 new PublisherBooksModel
                     (Publisher_BLL.GetPublisherRecord(PublisherBooksModel.Publisher.PublisherId),

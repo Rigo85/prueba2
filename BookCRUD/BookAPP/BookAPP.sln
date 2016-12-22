@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI_BookApp", "WebApplica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{C2A91079-AC2E-46F2-A106-07B530D07011}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services_BookApp", "Services_BookApp\Services_BookApp.csproj", "{21FBAA47-DC58-4C82-82BD-CDD4F23659BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceLibrary1", "WcfServiceLibrary1\WcfServiceLibrary1.csproj", "{EF3534DD-9DBA-4682-A3AA-1D633DB279AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{C2A91079-AC2E-46F2-A106-07B530D07011}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2A91079-AC2E-46F2-A106-07B530D07011}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2A91079-AC2E-46F2-A106-07B530D07011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21FBAA47-DC58-4C82-82BD-CDD4F23659BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21FBAA47-DC58-4C82-82BD-CDD4F23659BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21FBAA47-DC58-4C82-82BD-CDD4F23659BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21FBAA47-DC58-4C82-82BD-CDD4F23659BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF3534DD-9DBA-4682-A3AA-1D633DB279AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF3534DD-9DBA-4682-A3AA-1D633DB279AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF3534DD-9DBA-4682-A3AA-1D633DB279AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF3534DD-9DBA-4682-A3AA-1D633DB279AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
