@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfDemo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfDemo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfBookDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BookDetail" nillable="true" type="tns:BookDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBookDetail" nillable="true" type="tns:ArrayOfBookDetail" />
+  <xs:complexType name="BookDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BookId" type="xs:int" />
+      <xs:element minOccurs="0" name="BookName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookDetail" nillable="true" type="tns:BookDetail" />
+</xs:schema>

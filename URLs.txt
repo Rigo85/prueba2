@@ -1,0 +1,5 @@
+https://www.codeproject.com/articles/531332/implementing-a-basic-hello-world-wcf-service-v
+https://www.syncfusion.com/resources/techportal/ebooks?utm_medium=codeprojebDec16
+
+http://www.c-sharpcorner.com/UploadFile/b07128/how-to-create-wcf-service-in-visual-studio-2013/
+http://www.c-sharpcorner.com/UploadFile/b07128/how-to-use-wcf-service-in-mvc-5/

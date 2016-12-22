@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfDemo", "WcfDemo\WcfDemo.csproj", "{BA16639C-5D8F-4116-B6E3-7A52B6B84CFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{0F5D03E4-101B-45BF-A0C7-2066C483FFA9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BA16639C-5D8F-4116-B6E3-7A52B6B84CFB} = {BA16639C-5D8F-4116-B6E3-7A52B6B84CFB}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA16639C-5D8F-4116-B6E3-7A52B6B84CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA16639C-5D8F-4116-B6E3-7A52B6B84CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA16639C-5D8F-4116-B6E3-7A52B6B84CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA16639C-5D8F-4116-B6E3-7A52B6B84CFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5D03E4-101B-45BF-A0C7-2066C483FFA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5D03E4-101B-45BF-A0C7-2066C483FFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5D03E4-101B-45BF-A0C7-2066C483FFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5D03E4-101B-45BF-A0C7-2066C483FFA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

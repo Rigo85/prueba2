@@ -1,0 +1,8 @@
+BookId,BookName,Author,Price,Active
+1,El Viejo y el mar,Ernest Hemingway,65.23,True
+2,libro 4,sdasd,23.78,True
+3,libro 3,sdasd,23.78,True
+4,libro 2,sdasd,23.78,True
+5,libro1,autor,56.40,True
+6,libro 5,yo,12.54,True
+7,libro 7,autor,123.00,True
